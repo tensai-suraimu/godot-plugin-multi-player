@@ -21,3 +21,6 @@ func handle():
   ...
 
 ```
+
+## Preview, Examples & Api:
+[issue#1](https://github.com/tensai-suraimu/godot-plugin-multi-player/issues/1)
