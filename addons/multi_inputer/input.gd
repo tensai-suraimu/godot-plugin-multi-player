@@ -32,7 +32,7 @@ func action(joypad_id: int, action_name: String) -> String:
 
 ## Register a joypad as a standalone device.
 ## ‘joypad_id' should between [0, 7]
-## Returns false if failed to regist.
+## Returns false if register failed.
 func regist(joypad_id: int) -> bool:
 	if joypad_id < 0 or joypad_id > MAX_JOYPAD_ID:
 		return false
@@ -48,7 +48,7 @@ func regist(joypad_id: int) -> bool:
 
 ## Remove the registered joypad.
 ## ‘joypad_id' should between [0, 7]
-## Returns false if failed to remove.
+## Returns false if remove failed.
 func remove(joypad_id: int) -> bool:
 	if joypad_id < 0 or joypad_id > MAX_JOYPAD_ID:
 		return false
@@ -83,7 +83,7 @@ var _action_names: Array[StringName] = []
 func _prepare() -> void:
 	var action_names: = InputMap.get_actions()
 	for name in action_names:
-		if name.begins_with("ui_"): # 忽略内置动作
+		if name.begins_with("ui_"): # ignore ui actions
 			continue
 		var events := InputMap.action_get_events(name)
 		for event in events:
